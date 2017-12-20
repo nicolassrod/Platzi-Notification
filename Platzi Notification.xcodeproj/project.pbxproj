@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		37FB0AC01FEB264900AF1E09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB0ABF1FEB264900AF1E09 /* AppDelegate.swift */; };
+		37FB0AC21FEB264900AF1E09 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB0AC11FEB264900AF1E09 /* ViewController.swift */; };
+		37FB0AC51FEB264900AF1E09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37FB0AC31FEB264900AF1E09 /* Main.storyboard */; };
+		37FB0AC71FEB264900AF1E09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37FB0AC61FEB264900AF1E09 /* Assets.xcassets */; };
+		37FB0ACA1FEB264900AF1E09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37FB0AC81FEB264900AF1E09 /* LaunchScreen.storyboard */; };
+		37FB0AD51FEB264900AF1E09 /* Platzi_NotificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB0AD41FEB264900AF1E09 /* Platzi_NotificationTests.swift */; };
+		37FB0AE01FEB264900AF1E09 /* Platzi_NotificationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB0ADF1FEB264900AF1E09 /* Platzi_NotificationUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		37FB0AD11FEB264900AF1E09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37FB0AB41FEB264900AF1E09 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37FB0ABB1FEB264900AF1E09;
+			remoteInfo = "Platzi Notification";
+		};
+		37FB0ADC1FEB264900AF1E09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37FB0AB41FEB264900AF1E09 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37FB0ABB1FEB264900AF1E09;
+			remoteInfo = "Platzi Notification";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		37FB0ABC1FEB264900AF1E09 /* Platzi Notification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Platzi Notification.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		37FB0ABF1FEB264900AF1E09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		37FB0AC11FEB264900AF1E09 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		37FB0AC41FEB264900AF1E09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		37FB0AC61FEB264900AF1E09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		37FB0AC91FEB264900AF1E09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		37FB0ACB1FEB264900AF1E09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37FB0AD01FEB264900AF1E09 /* Platzi NotificationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Platzi NotificationTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		37FB0AD41FEB264900AF1E09 /* Platzi_NotificationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platzi_NotificationTests.swift; sourceTree = "<group>"; };
+		37FB0AD61FEB264900AF1E09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37FB0ADB1FEB264900AF1E09 /* Platzi NotificationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Platzi NotificationUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		37FB0ADF1FEB264900AF1E09 /* Platzi_NotificationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platzi_NotificationUITests.swift; sourceTree = "<group>"; };
+		37FB0AE11FEB264900AF1E09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		37FB0AB91FEB264900AF1E09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37FB0ACD1FEB264900AF1E09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37FB0AD81FEB264900AF1E09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		37FB0AB31FEB264900AF1E09 = {
+			isa = PBXGroup;
+			children = (
+				37FB0ABE1FEB264900AF1E09 /* Platzi Notification */,
+				37FB0AD31FEB264900AF1E09 /* Platzi NotificationTests */,
+				37FB0ADE1FEB264900AF1E09 /* Platzi NotificationUITests */,
+				37FB0ABD1FEB264900AF1E09 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		37FB0ABD1FEB264900AF1E09 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37FB0ABC1FEB264900AF1E09 /* Platzi Notification.app */,
+				37FB0AD01FEB264900AF1E09 /* Platzi NotificationTests.xctest */,
+				37FB0ADB1FEB264900AF1E09 /* Platzi NotificationUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		37FB0ABE1FEB264900AF1E09 /* Platzi Notification */ = {
+			isa = PBXGroup;
+			children = (
+				37FB0ABF1FEB264900AF1E09 /* AppDelegate.swift */,
+				37FB0AC11FEB264900AF1E09 /* ViewController.swift */,
+				37FB0AC31FEB264900AF1E09 /* Main.storyboard */,
+				37FB0AC61FEB264900AF1E09 /* Assets.xcassets */,
+				37FB0AC81FEB264900AF1E09 /* LaunchScreen.storyboard */,
+				37FB0ACB1FEB264900AF1E09 /* Info.plist */,
+			);
+			path = "Platzi Notification";
+			sourceTree = "<group>";
+		};
+		37FB0AD31FEB264900AF1E09 /* Platzi NotificationTests */ = {
+			isa = PBXGroup;
+			children = (
+				37FB0AD41FEB264900AF1E09 /* Platzi_NotificationTests.swift */,
+				37FB0AD61FEB264900AF1E09 /* Info.plist */,
+			);
+			path = "Platzi NotificationTests";
+			sourceTree = "<group>";
+		};
+		37FB0ADE1FEB264900AF1E09 /* Platzi NotificationUITests */ = {
+			isa = PBXGroup;
+			children = (
+				37FB0ADF1FEB264900AF1E09 /* Platzi_NotificationUITests.swift */,
+				37FB0AE11FEB264900AF1E09 /* Info.plist */,
+			);
+			path = "Platzi NotificationUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		37FB0ABB1FEB264900AF1E09 /* Platzi Notification */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37FB0AE41FEB264900AF1E09 /* Build configuration list for PBXNativeTarget "Platzi Notification" */;
+			buildPhases = (
+				37FB0AB81FEB264900AF1E09 /* Sources */,
+				37FB0AB91FEB264900AF1E09 /* Frameworks */,
+				37FB0ABA1FEB264900AF1E09 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Platzi Notification";
+			productName = "Platzi Notification";
+			productReference = 37FB0ABC1FEB264900AF1E09 /* Platzi Notification.app */;
+			productType = "com.apple.product-type.application";
+		};
+		37FB0ACF1FEB264900AF1E09 /* Platzi NotificationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37FB0AE71FEB264900AF1E09 /* Build configuration list for PBXNativeTarget "Platzi NotificationTests" */;
+			buildPhases = (
+				37FB0ACC1FEB264900AF1E09 /* Sources */,
+				37FB0ACD1FEB264900AF1E09 /* Frameworks */,
+				37FB0ACE1FEB264900AF1E09 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				37FB0AD21FEB264900AF1E09 /* PBXTargetDependency */,
+			);
+			name = "Platzi NotificationTests";
+			productName = "Platzi NotificationTests";
+			productReference = 37FB0AD01FEB264900AF1E09 /* Platzi NotificationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		37FB0ADA1FEB264900AF1E09 /* Platzi NotificationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37FB0AEA1FEB264900AF1E09 /* Build configuration list for PBXNativeTarget "Platzi NotificationUITests" */;
+			buildPhases = (
+				37FB0AD71FEB264900AF1E09 /* Sources */,
+				37FB0AD81FEB264900AF1E09 /* Frameworks */,
+				37FB0AD91FEB264900AF1E09 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				37FB0ADD1FEB264900AF1E09 /* PBXTargetDependency */,
+			);
+			name = "Platzi NotificationUITests";
+			productName = "Platzi NotificationUITests";
+			productReference = 37FB0ADB1FEB264900AF1E09 /* Platzi NotificationUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		37FB0AB41FEB264900AF1E09 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Nicolás Rodríguez";
+				TargetAttributes = {
+					37FB0ABB1FEB264900AF1E09 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					37FB0ACF1FEB264900AF1E09 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 37FB0ABB1FEB264900AF1E09;
+					};
+					37FB0ADA1FEB264900AF1E09 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 37FB0ABB1FEB264900AF1E09;
+					};
+				};
+			};
+			buildConfigurationList = 37FB0AB71FEB264900AF1E09 /* Build configuration list for PBXProject "Platzi Notification" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 37FB0AB31FEB264900AF1E09;
+			productRefGroup = 37FB0ABD1FEB264900AF1E09 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				37FB0ABB1FEB264900AF1E09 /* Platzi Notification */,
+				37FB0ACF1FEB264900AF1E09 /* Platzi NotificationTests */,
+				37FB0ADA1FEB264900AF1E09 /* Platzi NotificationUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		37FB0ABA1FEB264900AF1E09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37FB0ACA1FEB264900AF1E09 /* LaunchScreen.storyboard in Resources */,
+				37FB0AC71FEB264900AF1E09 /* Assets.xcassets in Resources */,
+				37FB0AC51FEB264900AF1E09 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37FB0ACE1FEB264900AF1E09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37FB0AD91FEB264900AF1E09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		37FB0AB81FEB264900AF1E09 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37FB0AC21FEB264900AF1E09 /* ViewController.swift in Sources */,
+				37FB0AC01FEB264900AF1E09 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37FB0ACC1FEB264900AF1E09 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37FB0AD51FEB264900AF1E09 /* Platzi_NotificationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37FB0AD71FEB264900AF1E09 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37FB0AE01FEB264900AF1E09 /* Platzi_NotificationUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		37FB0AD21FEB264900AF1E09 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 37FB0ABB1FEB264900AF1E09 /* Platzi Notification */;
+			targetProxy = 37FB0AD11FEB264900AF1E09 /* PBXContainerItemProxy */;
+		};
+		37FB0ADD1FEB264900AF1E09 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 37FB0ABB1FEB264900AF1E09 /* Platzi Notification */;
+			targetProxy = 37FB0ADC1FEB264900AF1E09 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		37FB0AC31FEB264900AF1E09 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37FB0AC41FEB264900AF1E09 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		37FB0AC81FEB264900AF1E09 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37FB0AC91FEB264900AF1E09 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		37FB0AE21FEB264900AF1E09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		37FB0AE31FEB264900AF1E09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		37FB0AE51FEB264900AF1E09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D5DZX4N5C6;
+				INFOPLIST_FILE = "Platzi Notification/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nicolassrod.Platzi-Notification";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		37FB0AE61FEB264900AF1E09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D5DZX4N5C6;
+				INFOPLIST_FILE = "Platzi Notification/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nicolassrod.Platzi-Notification";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		37FB0AE81FEB264900AF1E09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D5DZX4N5C6;
+				INFOPLIST_FILE = "Platzi NotificationTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nicolassrod.Platzi-NotificationTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Platzi Notification.app/Platzi Notification";
+			};
+			name = Debug;
+		};
+		37FB0AE91FEB264900AF1E09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D5DZX4N5C6;
+				INFOPLIST_FILE = "Platzi NotificationTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nicolassrod.Platzi-NotificationTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Platzi Notification.app/Platzi Notification";
+			};
+			name = Release;
+		};
+		37FB0AEB1FEB264900AF1E09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D5DZX4N5C6;
+				INFOPLIST_FILE = "Platzi NotificationUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nicolassrod.Platzi-NotificationUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Platzi Notification";
+			};
+			name = Debug;
+		};
+		37FB0AEC1FEB264900AF1E09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D5DZX4N5C6;
+				INFOPLIST_FILE = "Platzi NotificationUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nicolassrod.Platzi-NotificationUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Platzi Notification";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		37FB0AB71FEB264900AF1E09 /* Build configuration list for PBXProject "Platzi Notification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37FB0AE21FEB264900AF1E09 /* Debug */,
+				37FB0AE31FEB264900AF1E09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37FB0AE41FEB264900AF1E09 /* Build configuration list for PBXNativeTarget "Platzi Notification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37FB0AE51FEB264900AF1E09 /* Debug */,
+				37FB0AE61FEB264900AF1E09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37FB0AE71FEB264900AF1E09 /* Build configuration list for PBXNativeTarget "Platzi NotificationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37FB0AE81FEB264900AF1E09 /* Debug */,
+				37FB0AE91FEB264900AF1E09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37FB0AEA1FEB264900AF1E09 /* Build configuration list for PBXNativeTarget "Platzi NotificationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37FB0AEB1FEB264900AF1E09 /* Debug */,
+				37FB0AEC1FEB264900AF1E09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 37FB0AB41FEB264900AF1E09 /* Project object */;
+}
