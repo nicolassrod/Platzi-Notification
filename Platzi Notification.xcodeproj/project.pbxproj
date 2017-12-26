@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		372C76181FED74DE00802092 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372C76171FED74DE00802092 /* Button.swift */; };
 		37FB0AC01FEB264900AF1E09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB0ABF1FEB264900AF1E09 /* AppDelegate.swift */; };
 		37FB0AC21FEB264900AF1E09 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB0AC11FEB264900AF1E09 /* ViewController.swift */; };
 		37FB0AC51FEB264900AF1E09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37FB0AC31FEB264900AF1E09 /* Main.storyboard */; };
@@ -14,6 +15,7 @@
 		37FB0ACA1FEB264900AF1E09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37FB0AC81FEB264900AF1E09 /* LaunchScreen.storyboard */; };
 		37FB0AD51FEB264900AF1E09 /* Platzi_NotificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB0AD41FEB264900AF1E09 /* Platzi_NotificationTests.swift */; };
 		37FB0AE01FEB264900AF1E09 /* Platzi_NotificationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB0ADF1FEB264900AF1E09 /* Platzi_NotificationUITests.swift */; };
+		37FB0B2A1FEB4EA800AF1E09 /* AgendaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB0B291FEB4EA800AF1E09 /* AgendaTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		372C76171FED74DE00802092 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		37FB0ABC1FEB264900AF1E09 /* Platzi Notification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Platzi Notification.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37FB0ABF1FEB264900AF1E09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37FB0AC11FEB264900AF1E09 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 		37FB0ADB1FEB264900AF1E09 /* Platzi NotificationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Platzi NotificationUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37FB0ADF1FEB264900AF1E09 /* Platzi_NotificationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platzi_NotificationUITests.swift; sourceTree = "<group>"; };
 		37FB0AE11FEB264900AF1E09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37FB0B291FEB4EA800AF1E09 /* AgendaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +102,13 @@
 			isa = PBXGroup;
 			children = (
 				37FB0ABF1FEB264900AF1E09 /* AppDelegate.swift */,
+				37FB0B291FEB4EA800AF1E09 /* AgendaTableViewCell.swift */,
 				37FB0AC11FEB264900AF1E09 /* ViewController.swift */,
 				37FB0AC31FEB264900AF1E09 /* Main.storyboard */,
 				37FB0AC61FEB264900AF1E09 /* Assets.xcassets */,
 				37FB0AC81FEB264900AF1E09 /* LaunchScreen.storyboard */,
 				37FB0ACB1FEB264900AF1E09 /* Info.plist */,
+				372C76171FED74DE00802092 /* Button.swift */,
 			);
 			path = "Platzi Notification";
 			sourceTree = "<group>";
@@ -260,7 +266,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				37FB0AC21FEB264900AF1E09 /* ViewController.swift in Sources */,
+				37FB0B2A1FEB4EA800AF1E09 /* AgendaTableViewCell.swift in Sources */,
 				37FB0AC01FEB264900AF1E09 /* AppDelegate.swift in Sources */,
+				372C76181FED74DE00802092 /* Button.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
