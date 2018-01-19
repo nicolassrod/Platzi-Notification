@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		372C76181FED74DE00802092 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372C76171FED74DE00802092 /* Button.swift */; };
+		37F65608201250E600BC65B6 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F65607201250E600BC65B6 /* CourseViewController.swift */; };
 		37F762761FFFDFE600F29959 /* MoaDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F762751FFFDFE600F29959 /* MoaDistrib.swift */; };
 		37FB0AC01FEB264900AF1E09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB0ABF1FEB264900AF1E09 /* AppDelegate.swift */; };
 		37FB0AC21FEB264900AF1E09 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FB0AC11FEB264900AF1E09 /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		372C76171FED74DE00802092 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		37F65607201250E600BC65B6 /* CourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
 		37F762751FFFDFE600F29959 /* MoaDistrib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoaDistrib.swift; sourceTree = "<group>"; };
 		37FB0ABC1FEB264900AF1E09 /* Platzi Notification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Platzi Notification.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37FB0ABF1FEB264900AF1E09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				37FB0ABF1FEB264900AF1E09 /* AppDelegate.swift */,
 				37FB0B291FEB4EA800AF1E09 /* AgendaTableViewCell.swift */,
 				37FB0AC11FEB264900AF1E09 /* ViewController.swift */,
+				37F65607201250E600BC65B6 /* CourseViewController.swift */,
 				37FB0AC31FEB264900AF1E09 /* Main.storyboard */,
 				37FB0AC61FEB264900AF1E09 /* Assets.xcassets */,
 				37FB0AC81FEB264900AF1E09 /* LaunchScreen.storyboard */,
@@ -293,6 +296,7 @@
 				37F762761FFFDFE600F29959 /* MoaDistrib.swift in Sources */,
 				37FB0AC01FEB264900AF1E09 /* AppDelegate.swift in Sources */,
 				372C76181FED74DE00802092 /* Button.swift in Sources */,
+				37F65608201250E600BC65B6 /* CourseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

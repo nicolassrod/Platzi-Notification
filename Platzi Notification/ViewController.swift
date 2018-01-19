@@ -14,17 +14,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var AgendaTableView: UITableView!
 
     var DataCalendar: DataAgenda!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.AgendaTableView.delegate = self
         self.AgendaTableView.dataSource = self
         self.AgendaTableView.separatorColor = UIColor.clear
-        
-        
+
         addNavBarImage()
         getDataFromApi()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+
     }
     
     func addNavBarImage() {
@@ -45,17 +48,46 @@ class ViewController: UIViewController {
 
     func getDataFromApi() {
         let config = URLSessionConfiguration.default
-        config.waitsForConnectivity = true
-        
+        config.timeoutIntervalForRequest = 20.0
+
         let session = URLSession(configuration: config)
         let url = URL(string: "https://platzi-calendar-api-pjqzjebrnm.now.sh/get-agenda-data/")!
         
         let task = session.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
+            guard error == nil else {
+                print("Conecction Error")
+                print(error?.localizedDescription as Any)
+                let alert = UIAlertController(title: "Error 🤔", message: error?.localizedDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {_ in
+                    self.getDataFromApi()
+                }))
+                self.present(alert, animated: true, completion: nil)
+
+                return
+            }
+
             guard let data = data else { return }
-           
+
+            if let response = response as? HTTPURLResponse, response.statusCode != 200 {
+                print("No 200 status")
+                do {
+                    let url = URL(string: "https://platzi-calendar-api-pjqzjebrnm.now.sh/set-agenda-data/")
+                    let task = URLSession.shared.dataTask(with: url!) {_,_,_ in
+                        print("no 200 run")
+                    }
+
+                    task.resume()
+                }
+                self.getDataFromApi()
+            }
+
             do {
-                let jsonSerialized = try? JSONDecoder().decode( DataAgenda.self, from: data)
-                self.DataCalendar = jsonSerialized!
+                print(data)
+                let jsonSerialized = try JSONDecoder().decode(DataAgenda.self, from: data)
+                self.DataCalendar = jsonSerialized
+                self.addNewNotifications(whitData: self.DataCalendar)
+            } catch {
+//                self.AgendaTableView.backgroundColor = .black
             }
             DispatchQueue.main.async {
                 self.AgendaTableView.reloadData()
@@ -65,53 +97,91 @@ class ViewController: UIViewController {
         task.resume()
         
     }
+
+    func addNewNotifications(whitData dataJson: DataAgenda) {
+
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+
+        for i in 0..<dataJson.count {
+
+            let content = UNMutableNotificationContent()
+            content.title = "\(self.DataCalendar[i].details.title)"
+            content.body = self.DataCalendar[i].details.description
+            content.categoryIdentifier = "message"
+            content.sound = UNNotificationSound.default()
+
+            let formatted = DateFormatter()
+            formatted.dateFormat = "yyyy-MM-dd'T'HH:mm:ssxxxxx"
+            let date = formatted.date(from: self.DataCalendar[i].startTime)
+
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: date!.timeIntervalSinceNow, repeats: false)
+
+            let request = UNNotificationRequest(
+                identifier: "course.\(self.DataCalendar[i].id)",
+                content: content,
+                trigger: trigger
+            )
+
+            UNUserNotificationCenter.current().add(request) { (error : Error?) in
+                if let theError = error {
+                    print(theError.localizedDescription)
+                } else {
+                    print("added")
+                }
+            }
+        }
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert,.sound])
+
+        /* Not a very good way to do this, just here to give you ideas.
+         let alert = UIAlertController(
+         title: notification.request.content.title,
+         message: notification.request.content.body,
+         preferredStyle: .alert)
+         let okAction = UIAlertAction(
+         title: "OK",
+         style: .default,
+         handler: nil)
+         alert.addAction(okAction)
+         present(alert, animated: true, completion: nil)
+         */
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 
 
 // MARK: - TableView
 extension ViewController: UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.DataCalendar == nil ? 0 : self.DataCalendar.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("TabelView execute")
         let cell = AgendaTableView.dequeueReusableCell(withIdentifier: "AgendaCell") as! AgendaTableViewCell
         cell.EventNameLabel.text = self.DataCalendar[indexPath.row].details.title
         cell.EventImage.moa.url = self.DataCalendar[indexPath.row].details.badge
-        
-        if self.DataCalendar == nil {
-            print("Data is nil")
-        } else {
-            let content = UNMutableNotificationContent()
-            content.title = "🔴 \(self.DataCalendar[indexPath.row].details.title)"
-            content.body = self.DataCalendar[indexPath.row].details.description
-            
-            let formatted = DateFormatter()
-            formatted.dateFormat = "yyyy-MM-dd'T'HH:mm:ssxxxxx"
-            formatted.date(from: self.DataCalendar[indexPath.row].startTime)
-            
-            var dateInfo = DateComponents()
-			dateInfo.calendar = formatted.calendar
-            dateInfo.timeZone = formatted.timeZone
 
-            let triger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: false)
-			let request = UNNotificationRequest(identifier: "\(self.DataCalendar[indexPath.row].id)", content: content, trigger: triger)
+        let formatted = DateFormatter()
+        formatted.dateFormat = "yyyy-MM-dd'T'HH:mm:ssxxxxx"
+        let date = formatted.date(from: self.DataCalendar[indexPath.row].startTime)
 
-			let center = UNUserNotificationCenter.current()
-//			center.add(<#T##request: UNNotificationRequest##UNNotificationRequest#>, withCompletionHandler: <#T##((Error?) -> Void)?##((Error?) -> Void)?##(Error?) -> Void#>)
-        }
-        
+        formatted.dateFormat = "HH:mm"
+        let dateString = formatted.string(from: date!)
+
+        cell.EventTimeLabel.text = "\(dateString)"
+
         return cell
     }
-    
-    
+
 }
 
 extension ViewController: UITableViewDelegate {
