@@ -69,4 +69,5 @@ struct Details: Codable {
         case url = "url"
         case liveURL = "live_url"
     }
+
 }

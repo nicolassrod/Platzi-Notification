@@ -114,6 +114,9 @@ class ViewController: UIViewController {
             let formatted = DateFormatter()
             formatted.dateFormat = "yyyy-MM-dd'T'HH:mm:ssxxxxx"
             let date = formatted.date(from: self.DataCalendar[i].startTime)
+            if date!.timeIntervalSinceNow <= 0 {
+                continue
+            }
 
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: date!.timeIntervalSinceNow, repeats: false)
 
@@ -127,7 +130,7 @@ class ViewController: UIViewController {
                 if let theError = error {
                     print(theError.localizedDescription)
                 } else {
-                    print("added")
+                    print("Added notification number \(i)")
                 }
             }
         }
@@ -154,6 +157,30 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        super.prepare(for: segue, sender: sender)
+        switch(segue.identifier ?? "") {
+
+        case "ShowDetail":
+            guard let detailViewController = segue.destination as? CourseViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+
+            guard let indexPath = AgendaTableView.indexPathForSelectedRow else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+
+            let selectedMeal = DataCalendar[indexPath.row]
+            print(selectedMeal.details.title)
+            detailViewController.data = selectedMeal.details
+
+        default:
+            print("nil")
+        }
+    }
+
 
 }
 
@@ -185,5 +212,11 @@ extension ViewController: UITableViewDataSource {
 }
 
 extension ViewController: UITableViewDelegate {
-    
+//
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        print(indexPath.row)
+//
+//
+//    }
+
 }
