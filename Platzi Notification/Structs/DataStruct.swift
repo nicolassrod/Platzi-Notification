@@ -46,7 +46,7 @@ struct Details: Codable {
     let socialImageURL: String
     let socialDescription: String
     let lang: String
-    let video: String
+    let video: String?
     let url: String
     let liveURL: String
     

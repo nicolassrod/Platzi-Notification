@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M7N-OT-VPh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M7N-OT-VPh">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -28,70 +24,82 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="628"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AgendaCell" rowHeight="44" id="Qzi-mu-GOt" customClass="AgendaTableViewCell" customModule="Platzi_Notification" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AgendaCell" rowHeight="120" id="Qzi-mu-GOt" customClass="AgendaTableViewCell" customModule="Platzi_Notification" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qzi-mu-GOt" id="HWT-hL-3WV">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="119.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dA9-1J-OoX">
-                                                    <rect key="frame" x="53" y="3" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" name="Type"/>
-                                                    <color key="highlightedColor" name="Second"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lanzamiento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6g-5z-jtt">
-                                                    <rect key="frame" x="53" y="24" width="73" height="15"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" name="Type"/>
-                                                    <color key="highlightedColor" name="Second"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sesiones en vivo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4k0-wE-ehD">
-                                                    <rect key="frame" x="134" y="24" width="95" height="15"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" name="Type"/>
-                                                    <color key="highlightedColor" name="Second"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PlatziLive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dac-vG-ugt">
-                                                    <rect key="frame" x="236.66666666666663" y="24" width="54" height="15"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" name="Type"/>
-                                                    <color key="highlightedColor" name="Second"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kP3-jn-P2k">
-                                                    <rect key="frame" x="344" y="3" width="50" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="Dl4-wH-dm9"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" name="Type"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k2O-mz-PLj">
-                                                    <rect key="frame" x="12" y="7" width="29" height="29"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="29" id="8rH-ys-7zX"/>
-                                                        <constraint firstAttribute="width" constant="29" id="veo-ue-AAc"/>
-                                                    </constraints>
-                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="j0N-5Z-UG7">
+                                                    <rect key="frame" x="20" y="11" width="374" height="98"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k2O-mz-PLj">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="k2O-mz-PLj" secondAttribute="height" multiplier="1:1" id="8un-He-dTc"/>
+                                                                <constraint firstAttribute="width" constant="50" id="cPM-l5-DLH"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tnP-k5-Wmk">
+                                                            <rect key="frame" x="58" y="0.0" width="316" height="96.666666666666671"/>
+                                                            <subviews>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="duf-9s-KCt">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="316" height="24"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Title" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dA9-1J-OoX">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="259.66666666666669" height="24"/>
+                                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                                            <color key="textColor" name="Type"/>
+                                                                            <color key="highlightedColor" name="Second"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kP3-jn-P2k">
+                                                                            <rect key="frame" x="267.66666666666669" y="0.0" width="48.333333333333314" height="24"/>
+                                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                            <color key="textColor" name="Type"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description Description Description Description " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfl-7y-PH5">
+                                                                    <rect key="frame" x="0.0" y="32" width="316" height="42.333333333333343"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                    <color key="textColor" name="Type"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sQm-yP-zKu">
+                                                                    <rect key="frame" x="0.0" y="82.333333333333329" width="316" height="14.333333333333329"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lanzamiento" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6g-5z-jtt">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="103.33333333333333" height="14.333333333333334"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                            <color key="textColor" name="Type"/>
+                                                                            <color key="highlightedColor" name="Second"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sesiones en vivo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4k0-wE-ehD">
+                                                                            <rect key="frame" x="111.33333333333333" y="0.0" width="135.33333333333337" height="14.333333333333334"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                            <color key="textColor" name="Type"/>
+                                                                            <color key="highlightedColor" name="Second"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PlatziLive" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dac-vG-ugt">
+                                                                            <rect key="frame" x="254.66666666666671" y="0.0" width="61.333333333333343" height="14.333333333333334"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                            <color key="textColor" name="Type"/>
+                                                                            <color key="highlightedColor" name="Second"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="dA9-1J-OoX" firstAttribute="leading" secondItem="k2O-mz-PLj" secondAttribute="trailing" constant="12" id="4TV-Vf-N8A"/>
-                                                <constraint firstAttribute="bottom" secondItem="k2O-mz-PLj" secondAttribute="bottom" constant="8" id="7Bd-G2-5e9"/>
-                                                <constraint firstItem="kP3-jn-P2k" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dA9-1J-OoX" secondAttribute="trailing" constant="8" id="7X3-LJ-Ilm"/>
-                                                <constraint firstItem="4k0-wE-ehD" firstAttribute="leading" secondItem="j6g-5z-jtt" secondAttribute="trailing" constant="8" id="9a7-Xc-coN"/>
-                                                <constraint firstItem="dac-vG-ugt" firstAttribute="top" secondItem="dA9-1J-OoX" secondAttribute="bottom" id="Bca-Tq-Gqa"/>
-                                                <constraint firstAttribute="trailing" secondItem="kP3-jn-P2k" secondAttribute="trailing" constant="20" symbolic="YES" id="DYb-5g-1fB"/>
-                                                <constraint firstItem="k2O-mz-PLj" firstAttribute="top" secondItem="HWT-hL-3WV" secondAttribute="top" constant="7" id="PMN-ih-F7B"/>
-                                                <constraint firstItem="j6g-5z-jtt" firstAttribute="leading" secondItem="k2O-mz-PLj" secondAttribute="trailing" constant="12" id="SI8-D8-dEv"/>
-                                                <constraint firstItem="dac-vG-ugt" firstAttribute="leading" secondItem="4k0-wE-ehD" secondAttribute="trailing" constant="8" id="adG-ZH-OAY"/>
-                                                <constraint firstItem="j6g-5z-jtt" firstAttribute="top" secondItem="dA9-1J-OoX" secondAttribute="bottom" id="bhz-C4-cZQ"/>
-                                                <constraint firstItem="k2O-mz-PLj" firstAttribute="leading" secondItem="HWT-hL-3WV" secondAttribute="leading" constant="12" id="dWY-VG-27k"/>
-                                                <constraint firstItem="4k0-wE-ehD" firstAttribute="top" secondItem="dA9-1J-OoX" secondAttribute="bottom" id="glT-JQ-Cuz"/>
-                                                <constraint firstItem="dA9-1J-OoX" firstAttribute="top" secondItem="HWT-hL-3WV" secondAttribute="top" constant="3" id="k0T-dI-7gM"/>
-                                                <constraint firstItem="kP3-jn-P2k" firstAttribute="top" secondItem="HWT-hL-3WV" secondAttribute="top" constant="3" id="krW-RA-Aoq"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dac-vG-ugt" secondAttribute="trailing" constant="20" symbolic="YES" id="sVF-tG-LXA"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="j0N-5Z-UG7" secondAttribute="bottom" id="DIu-AO-HtZ"/>
+                                                <constraint firstItem="j0N-5Z-UG7" firstAttribute="top" secondItem="HWT-hL-3WV" secondAttribute="topMargin" id="SUN-TC-sGC"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="j0N-5Z-UG7" secondAttribute="trailing" id="hcn-O2-zkf"/>
+                                                <constraint firstItem="j0N-5Z-UG7" firstAttribute="leading" secondItem="HWT-hL-3WV" secondAttribute="leadingMargin" id="zv4-1M-osV"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -111,51 +119,17 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Dh-r4-p6T">
                                 <rect key="frame" x="0.0" y="628" width="414" height="44"/>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="BWg-4x-HkG"/>
-                                    <barButtonItem style="plain" id="YHN-Xf-oje">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="r04-Lu-ncr">
-                                            <rect key="frame" x="42.666666666666657" y="7" width="105" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                            <state key="normal" title="⦁ Lanzamiento">
-                                                <color key="titleColor" name="Launching"/>
-                                            </state>
-                                        </button>
+                                    <barButtonItem title="Course launch" id="TGs-rw-qJl">
+                                        <color key="tintColor" name="Launching"/>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="h1Q-A5-3hd"/>
-                                    <barButtonItem style="plain" id="JtR-FQ-9mE">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YU2-6a-bf2">
-                                            <rect key="frame" x="170.33333333333334" y="7" width="66" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                            <state key="normal" title="⦁ En Vivo">
-                                                <color key="titleColor" name="Live-session"/>
-                                            </state>
-                                        </button>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="yjE-7l-3ZT"/>
+                                    <barButtonItem title="Live Sessions" id="Z3K-pn-mng">
+                                        <color key="tintColor" name="Live-session"/>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Wur-O3-tL1"/>
-                                    <barButtonItem style="plain" id="NA8-0Q-PPn">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bzt-pr-QQZ">
-                                            <rect key="frame" x="258.66666666666669" y="7" width="42" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                            <state key="normal" title="⦁ Live">
-                                                <color key="titleColor" name="Live"/>
-                                            </state>
-                                        </button>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="lTx-k4-kQB"/>
+                                    <barButtonItem title="PlatziLive" id="dOM-PO-yin">
+                                        <color key="tintColor" name="Live"/>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ZFr-xu-eOP"/>
-                                    <barButtonItem style="plain" id="mpf-ec-67A">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ax2-Zc-775">
-                                            <rect key="frame" x="323.33333333333331" y="7" width="48" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                            <state key="normal" title="⦁ Conf">
-                                                <color key="titleColor" name="Conf"/>
-                                            </state>
-                                        </button>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Lak-Ll-yja"/>
                                 </items>
                                 <color key="barTintColor" name="Second"/>
                             </toolbar>
@@ -182,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1311.2" y="492.11822660098522"/>
+            <point key="canvasLocation" x="1310.144927536232" y="491.57608695652175"/>
         </scene>
         <!--Course View Controller-->
         <scene sceneID="I9D-wR-Rhs">
@@ -201,99 +175,89 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIG-xw-aDe">
-                                            <rect key="frame" x="57" y="358" width="300" height="20.333333333333314"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="19" id="74u-yX-nef"/>
-                                                <constraint firstAttribute="width" constant="300" id="ZJ6-0T-f7h"/>
-                                            </constraints>
-                                            <string key="text">Aprende cómo crear anuncios que realmente convierten clics en ventas. Crea, administra y optimiza campañas en Google AdWords. Prepárate para el examen y certifícate como Adwords Certified Professional.</string>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Curso Profesional de Google AdWords 2016" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXr-xq-LID">
-                                            <rect key="frame" x="57.666666666666657" y="280" width="300" height="62"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="6wh-U6-MhN"/>
-                                                <constraint firstAttribute="width" constant="300" id="x6Z-Uc-n05"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="highlightedColor" name="Type"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="adwords2x" translatesAutoresizingMaskIntoConstraints="NO" id="hMg-FF-nDz">
-                                            <rect key="frame" x="167.33333333333334" y="184" width="80" height="80"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="80" id="Loc-b2-geY"/>
-                                                <constraint firstAttribute="width" constant="80" id="qfM-I3-BFW"/>
-                                            </constraints>
-                                        </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aao-j4-o1L" customClass="Button" customModule="Platzi_Notification" customModuleProvider="target">
-                                            <rect key="frame" x="222.66666666666663" y="418.33333333333331" width="91" height="26"/>
-                                            <color key="backgroundColor" name="Primary"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="26" id="42U-v7-Mzr"/>
-                                                <constraint firstAttribute="width" constant="91" id="nqJ-C0-kw4"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <inset key="contentEdgeInsets" minX="8" minY="4" maxX="8" maxY="4"/>
-                                            <state key="normal" title="Ok"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="7"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                            <connections>
-                                                <action selector="dismiss:" destination="LHj-Aq-91C" eventType="touchUpInside" id="zuH-Ov-bWU"/>
-                                            </connections>
-                                        </button>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CMc-qM-QCX">
-                                            <rect key="frame" x="192.66666666666666" y="418.33333333333331" width="30" height="26"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="26" id="lLN-7E-jZT"/>
-                                                <constraint firstAttribute="width" constant="30" id="xYO-Ig-3Kt"/>
-                                            </constraints>
-                                        </view>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4R-Y5-FB9" customClass="Button" customModule="Platzi_Notification" customModuleProvider="target">
-                                            <rect key="frame" x="101.66666666666669" y="418.33333333333331" width="91" height="26"/>
-                                            <color key="backgroundColor" name="Primary"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="91" id="qan-NL-zxH"/>
-                                                <constraint firstAttribute="height" constant="26" id="uEI-1t-mdv"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <inset key="contentEdgeInsets" minX="8" minY="4" maxX="8" maxY="4"/>
-                                            <state key="normal" title="GO!!"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="7"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                            <connections>
-                                                <action selector="goButton:" destination="LHj-Aq-91C" eventType="touchUpInside" id="RTe-0n-8ZO"/>
-                                            </connections>
-                                        </button>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="KoI-yr-z90">
+                                            <rect key="frame" x="57" y="172.33333333333334" width="300" height="391.33333333333326"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="2tf-n2-NJQ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="325.33333333333331"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="adwords2x" translatesAutoresizingMaskIntoConstraints="NO" id="hMg-FF-nDz">
+                                                            <rect key="frame" x="70" y="0.0" width="160" height="85"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="85" id="Loc-b2-geY"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Curso Profesional de Google AdWords 2016" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXr-xq-LID">
+                                                            <rect key="frame" x="0.0" y="108.99999999999997" width="300" height="62"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="300" id="x6Z-Uc-n05"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                            <color key="highlightedColor" name="Type"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIG-xw-aDe">
+                                                            <rect key="frame" x="0.0" y="194.99999999999994" width="300" height="130.33333333333331"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="300" id="ZJ6-0T-f7h"/>
+                                                            </constraints>
+                                                            <string key="text">Aprende cómo crear anuncios que realmente convierten clics en ventas. Crea, administra y optimiza campañas en Google AdWords. Prepárate para el examen y certifícate como Adwords Certified Professional.</string>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="wRk-RV-mtY">
+                                                    <rect key="frame" x="42.666666666666686" y="365.33333333333326" width="215" height="26"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4R-Y5-FB9" customClass="Button" customModule="Platzi_Notification" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="90" height="26"/>
+                                                            <color key="backgroundColor" name="Primary"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="VEi-TS-8eb"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <inset key="contentEdgeInsets" minX="8" minY="4" maxX="8" maxY="4"/>
+                                                            <state key="normal" title="GO!!"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="7"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="goButton:" destination="LHj-Aq-91C" eventType="touchUpInside" id="RTe-0n-8ZO"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aao-j4-o1L" customClass="Button" customModule="Platzi_Notification" customModuleProvider="target">
+                                                            <rect key="frame" x="125" y="0.0" width="90" height="26"/>
+                                                            <color key="backgroundColor" name="Primary"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="26" id="42U-v7-Mzr"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="YAH-7Q-VFc"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <inset key="contentEdgeInsets" minX="8" minY="4" maxX="8" maxY="4"/>
+                                                            <state key="normal" title="Ok"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="7"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="dismiss:" destination="LHj-Aq-91C" eventType="touchUpInside" id="zuH-Ov-bWU"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="CMc-qM-QCX" firstAttribute="centerX" secondItem="BGt-Nu-kut" secondAttribute="centerX" id="0wj-Bv-sJP"/>
-                                        <constraint firstItem="yIG-xw-aDe" firstAttribute="top" secondItem="vXr-xq-LID" secondAttribute="bottom" constant="16" id="5CD-0X-wnu"/>
-                                        <constraint firstItem="yIG-xw-aDe" firstAttribute="centerX" secondItem="BGt-Nu-kut" secondAttribute="centerX" id="7WD-3u-fzS"/>
-                                        <constraint firstItem="vXr-xq-LID" firstAttribute="centerX" secondItem="BGt-Nu-kut" secondAttribute="centerX" id="BcS-Em-U8j"/>
-                                        <constraint firstItem="Aao-j4-o1L" firstAttribute="top" secondItem="yIG-xw-aDe" secondAttribute="bottom" constant="40" id="DvB-sp-7AV"/>
-                                        <constraint firstItem="hMg-FF-nDz" firstAttribute="centerX" secondItem="BGt-Nu-kut" secondAttribute="centerX" id="GyP-PR-48j"/>
-                                        <constraint firstItem="yIG-xw-aDe" firstAttribute="centerY" secondItem="BGt-Nu-kut" secondAttribute="centerY" id="I9w-x2-Xlh"/>
-                                        <constraint firstItem="Aao-j4-o1L" firstAttribute="leading" secondItem="CMc-qM-QCX" secondAttribute="trailing" id="McF-tc-Nh7"/>
-                                        <constraint firstItem="a4R-Y5-FB9" firstAttribute="top" secondItem="yIG-xw-aDe" secondAttribute="bottom" constant="40" id="Sgq-Dx-Ths"/>
-                                        <constraint firstItem="vXr-xq-LID" firstAttribute="top" secondItem="hMg-FF-nDz" secondAttribute="bottom" constant="16" id="eDS-ff-4pn"/>
-                                        <constraint firstItem="a4R-Y5-FB9" firstAttribute="baseline" secondItem="Aao-j4-o1L" secondAttribute="baseline" id="iAe-du-LLC"/>
-                                        <constraint firstItem="hMg-FF-nDz" firstAttribute="top" relation="greaterThanOrEqual" secondItem="BGt-Nu-kut" secondAttribute="top" constant="12" id="lBl-mA-a4V"/>
-                                        <constraint firstItem="CMc-qM-QCX" firstAttribute="leading" secondItem="a4R-Y5-FB9" secondAttribute="trailing" id="mfl-6W-GOs"/>
-                                        <constraint firstItem="a4R-Y5-FB9" firstAttribute="top" secondItem="CMc-qM-QCX" secondAttribute="top" id="s4z-Dq-qzC"/>
-                                        <constraint firstItem="CMc-qM-QCX" firstAttribute="top" secondItem="yIG-xw-aDe" secondAttribute="bottom" constant="40" id="v2x-zB-hoK"/>
+                                        <constraint firstItem="KoI-yr-z90" firstAttribute="centerY" secondItem="BGt-Nu-kut" secondAttribute="centerY" id="5AQ-g1-jcC"/>
+                                        <constraint firstItem="KoI-yr-z90" firstAttribute="centerX" secondItem="BGt-Nu-kut" secondAttribute="centerX" id="alz-Dt-DWy"/>
                                     </constraints>
                                 </view>
                                 <blurEffect style="dark"/>
@@ -354,9 +318,6 @@
     <resources>
         <image name="adwords2x" width="160" height="160"/>
         <image name="opengraph-google-adwords-2017" width="1200" height="627"/>
-        <namedColor name="Conf">
-            <color red="0.97100001573562622" green="0.87199997901916504" blue="0.81199997663497925" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
         <namedColor name="Launching">
             <color red="0.79100000858306885" green="0.88200002908706665" blue="0.95999997854232788" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
@@ -365,6 +326,9 @@
         </namedColor>
         <namedColor name="Live-session">
             <color red="0.90200001001358032" green="0.94199997186660767" blue="0.82300001382827759" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Primary">
+            <color red="0.63200002908706665" green="0.78100001811981201" blue="0.33500000834465027" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Primary">
             <color red="0.63200002908706665" green="0.78100001811981201" blue="0.33500000834465027" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

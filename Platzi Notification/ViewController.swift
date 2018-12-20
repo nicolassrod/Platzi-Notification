@@ -13,11 +13,11 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var AgendaTableView: UITableView!
 
-    var DataCalendar: DataAgenda!
+	private var dataCalendar: DataAgenda?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+		
         self.AgendaTableView.delegate = self
         self.AgendaTableView.dataSource = self
         self.AgendaTableView.separatorColor = UIColor.clear
@@ -25,25 +25,23 @@ class ViewController: UIViewController {
         addNavBarImage()
         getDataFromApi()
     }
-
-    override func viewDidAppear(_ animated: Bool) {
-
-    }
-    
-    func addNavBarImage() {
-        let navController = navigationController!
-        let image = #imageLiteral(resourceName: "platzi")
-        let imageView = UIImageView(image: image)
+	
+    private func addNavBarImage() {
+		guard let navController = navigationController else {
+			return
+		}
+		
+        let logoImageView = UIImageView(image: #imageLiteral(resourceName: "platzi"))
         let bannerWidth = navController.navigationBar.frame.size.width
         let bannerHeight = navController.navigationBar.frame.size.height
 
-        let bannerX = bannerWidth / 2 - image.size.width / 2
-        let bannerY = bannerHeight / 2 - image.size.height / 2
+        let bannerX = bannerWidth / 2 - #imageLiteral(resourceName: "platzi").size.width / 2
+        let bannerY = bannerHeight / 2 - #imageLiteral(resourceName: "platzi").size.height / 2
         
-        imageView.frame = CGRect(x: bannerX, y: bannerY, width: bannerWidth, height: bannerHeight)
-        imageView.contentMode = .scaleAspectFit
+        logoImageView.frame = CGRect(x: bannerX, y: bannerY, width: bannerWidth, height: bannerHeight)
+        logoImageView.contentMode = .scaleAspectFit
         
-        navigationItem.titleView = imageView
+        navigationItem.titleView = logoImageView
     }
 
     func getDataFromApi() {
@@ -51,44 +49,56 @@ class ViewController: UIViewController {
         config.timeoutIntervalForRequest = 20.0
 
         let session = URLSession(configuration: config)
-        let url = URL(string: "https://platzi-calendar-api-pjqzjebrnm.now.sh/get-agenda-data/")!
+        let url = URL(string: "https://platzi-agenda.herokuapp.com/get-agenda-data/")!
         
         let task = session.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
             guard error == nil else {
-                print("Conecction Error")
+                print("Conecction Error ", error!.localizedDescription)
                 print(error?.localizedDescription as Any)
+				
                 let alert = UIAlertController(title: "Error 🤔", message: error?.localizedDescription, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {_ in
                     self.getDataFromApi()
                 }))
+				
                 self.present(alert, animated: true, completion: nil)
 
                 return
             }
 
-            guard let data = data else { return }
+            guard let data = data else {
+				return
+			}
 
             if let response = response as? HTTPURLResponse, response.statusCode != 200 {
                 print("No 200 status")
                 do {
-                    let url = URL(string: "https://platzi-calendar-api-pjqzjebrnm.now.sh/set-agenda-data/")
-                    let task = URLSession.shared.dataTask(with: url!) {_,_,_ in
+                    let url = URL(string: "https://platzi-agenda.herokuapp.com/set-agenda-data/")
+                    URLSession.shared.dataTask(with: url!) {_,_,_ in
                         print("no 200 run")
-                    }
-
-                    task.resume()
-                }
-                self.getDataFromApi()
+					}.resume()
+				}
+				self.getDataFromApi()
             }
 
             do {
-                print(data)
-                let jsonSerialized = try JSONDecoder().decode(DataAgenda.self, from: data)
-                self.DataCalendar = jsonSerialized
-                self.addNewNotifications(whitData: self.DataCalendar)
-            } catch {
-//                self.AgendaTableView.backgroundColor = .black
-            }
+            	let jsonSerialized = try JSONDecoder().decode(DataAgenda.self, from: data)
+            	self.dataCalendar = jsonSerialized
+				self.addNewNotifications(whitData: jsonSerialized)
+			} catch let DecodingError.dataCorrupted(context) {
+				print(context)
+			} catch let DecodingError.keyNotFound(key, context) {
+				print("Key '\(key)' not found:", context.debugDescription)
+				print("codingPath:", context.codingPath)
+			} catch let DecodingError.valueNotFound(value, context) {
+				print("Value '\(value)' not found:", context.debugDescription)
+				print("codingPath:", context.codingPath)
+			} catch let DecodingError.typeMismatch(type, context)  {
+				print("Type '\(type)' mismatch:", context.debugDescription)
+				print("codingPath:", context.codingPath)
+			} catch {
+				print("error: ", error)
+			}
             DispatchQueue.main.async {
                 self.AgendaTableView.reloadData()
             }
@@ -104,16 +114,20 @@ class ViewController: UIViewController {
         UNUserNotificationCenter.current().removeAllDeliveredNotifications()
 
         for i in 0..<dataJson.count {
-
+			
+			guard let data = self.dataCalendar else {
+				return
+			}
+			
             let content = UNMutableNotificationContent()
-            content.title = "\(self.DataCalendar[i].details.title)"
-            content.body = self.DataCalendar[i].details.description
+			content.title = data[i].details.title
+            content.body = data[i].details.description
             content.categoryIdentifier = "message"
-            content.sound = UNNotificationSound.default()
+            content.sound = UNNotificationSound.default
 
             let formatted = DateFormatter()
             formatted.dateFormat = "yyyy-MM-dd'T'HH:mm:ssxxxxx"
-            let date = formatted.date(from: self.DataCalendar[i].startTime)
+            let date = formatted.date(from: data[i].startTime)
             if date!.timeIntervalSinceNow <= 0 {
                 continue
             }
@@ -121,7 +135,7 @@ class ViewController: UIViewController {
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: date!.timeIntervalSinceNow, repeats: false)
 
             let request = UNNotificationRequest(
-                identifier: "course.\(self.DataCalendar[i].id)",
+                identifier: "course.\(data[i].id)",
                 content: content,
                 trigger: trigger
             )
@@ -171,10 +185,14 @@ class ViewController: UIViewController {
             guard let indexPath = AgendaTableView.indexPathForSelectedRow else {
                 fatalError("The selected cell is not being displayed by the table")
             }
+			
+			guard let data = dataCalendar else {
+				return
+			}
 
-            let selectedMeal = DataCalendar[indexPath.row]
-            print(selectedMeal.details.title)
-            detailViewController.data = selectedMeal.details
+            let selected = data[indexPath.row]
+            print(selected.details.title)
+            detailViewController.data = selected.details
 
         default:
             print("nil")
@@ -184,22 +202,28 @@ class ViewController: UIViewController {
 
 }
 
-
 // MARK: - TableView
 extension ViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.DataCalendar == nil ? 0 : self.DataCalendar.count
+		return self.dataCalendar?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = AgendaTableView.dequeueReusableCell(withIdentifier: "AgendaCell") as! AgendaTableViewCell
-        cell.EventNameLabel.text = self.DataCalendar[indexPath.row].details.title
-        cell.EventImage.moa.url = self.DataCalendar[indexPath.row].details.badge
+		guard let cell = AgendaTableView.dequeueReusableCell(withIdentifier: "AgendaCell") as? AgendaTableViewCell else {
+			return UITableViewCell()
+		}
+		
+		guard let dataCalendar = self.dataCalendar else {
+			return UITableViewCell()
+		}
+		
+		cell.EventNameLabel.text = dataCalendar[indexPath.row].details.title
+        cell.EventImage.moa.url = dataCalendar[indexPath.row].details.badge
 
         let formatted = DateFormatter()
         formatted.dateFormat = "yyyy-MM-dd'T'HH:mm:ssxxxxx"
-        let date = formatted.date(from: self.DataCalendar[indexPath.row].startTime)
+        let date = formatted.date(from: dataCalendar[indexPath.row].startTime)
 
         formatted.dateFormat = "HH:mm"
         let dateString = formatted.string(from: date!)
