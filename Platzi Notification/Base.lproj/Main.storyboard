@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M7N-OT-VPh">
-    <device id="retina5_5" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r0p-ao-rOP">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -17,22 +17,22 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Platzi_Notification" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qlh-io-bPW">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="628"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qlh-io-bPW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AgendaCell" rowHeight="120" id="Qzi-mu-GOt" customClass="AgendaTableViewCell" customModule="Platzi_Notification" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="120"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="AgendaCell" rowHeight="120" id="Qzi-mu-GOt" customClass="AgendaTableViewCell" customModule="Platzi_Notification" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qzi-mu-GOt" id="HWT-hL-3WV">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="119.66666666666667"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="j0N-5Z-UG7">
-                                                    <rect key="frame" x="20" y="11" width="374" height="98"/>
+                                                    <rect key="frame" x="10" y="11" width="350" height="98"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k2O-mz-PLj">
                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -42,50 +42,75 @@
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tnP-k5-Wmk">
-                                                            <rect key="frame" x="58" y="0.0" width="316" height="96.666666666666671"/>
+                                                            <rect key="frame" x="58" y="0.0" width="292" height="93"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="duf-9s-KCt">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="316" height="24"/>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="firstBaseline" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="duf-9s-KCt">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="292" height="20.333333333333332"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Title" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dA9-1J-OoX">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="259.66666666666669" height="24"/>
-                                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Title" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dA9-1J-OoX">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="231.66666666666666" height="20.333333333333332"/>
+                                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                                             <color key="textColor" name="Type"/>
                                                                             <color key="highlightedColor" name="Second"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kP3-jn-P2k">
-                                                                            <rect key="frame" x="267.66666666666669" y="0.0" width="48.333333333333314" height="24"/>
-                                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="Enero 12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kP3-jn-P2k">
+                                                                            <rect key="frame" x="239.66666666666671" y="3.9999999999999991" width="52.333333333333343" height="15.666666666666664"/>
+                                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                                             <color key="textColor" name="Type"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description Description Description Description " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfl-7y-PH5">
-                                                                    <rect key="frame" x="0.0" y="32" width="316" height="42.333333333333343"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" tag="-1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description Description Description Description  Description Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfl-7y-PH5">
+                                                                    <rect key="frame" x="0.0" y="28.333333333333332" width="292" height="42.333333333333343"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                     <color key="textColor" name="Type"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sQm-yP-zKu">
-                                                                    <rect key="frame" x="0.0" y="82.333333333333329" width="316" height="14.333333333333329"/>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sQm-yP-zKu">
+                                                                    <rect key="frame" x="0.0" y="78.666666666666671" width="292" height="14.333333333333329"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lanzamiento" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6g-5z-jtt">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="103.33333333333333" height="14.333333333333334"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                            <color key="textColor" name="Type"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6g-5z-jtt">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="92" height="14.333333333333334"/>
+                                                                            <color key="backgroundColor" name="Launching"/>
+                                                                            <attributedString key="attributedText">
+                                                                                <fragment content="Course Launch  ">
+                                                                                    <attributes>
+                                                                                        <color key="NSColor" red="0.10957757383584976" green="0.21109187602996826" blue="0.26120954751968384" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                        <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                                    </attributes>
+                                                                                </fragment>
+                                                                            </attributedString>
+                                                                            <color key="highlightedColor" name="Second"/>
+                                                                            <size key="shadowOffset" width="0.0" height="0.0"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4k0-wE-ehD">
+                                                                            <rect key="frame" x="100" y="0.0" width="92" height="14.333333333333334"/>
+                                                                            <color key="backgroundColor" name="Live-session"/>
+                                                                            <attributedString key="attributedText">
+                                                                                <fragment content="Live Sessions  ">
+                                                                                    <attributes>
+                                                                                        <color key="NSColor" name="Type"/>
+                                                                                        <font key="NSFont" size="12" name=".SFNSText"/>
+                                                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                                    </attributes>
+                                                                                </fragment>
+                                                                            </attributedString>
                                                                             <color key="highlightedColor" name="Second"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sesiones en vivo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4k0-wE-ehD">
-                                                                            <rect key="frame" x="111.33333333333333" y="0.0" width="135.33333333333337" height="14.333333333333334"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                            <color key="textColor" name="Type"/>
-                                                                            <color key="highlightedColor" name="Second"/>
-                                                                        </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PlatziLive" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dac-vG-ugt">
-                                                                            <rect key="frame" x="254.66666666666671" y="0.0" width="61.333333333333343" height="14.333333333333334"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                            <color key="textColor" name="Type"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dac-vG-ugt">
+                                                                            <rect key="frame" x="200" y="0.0" width="92" height="14.333333333333334"/>
+                                                                            <color key="backgroundColor" name="Live"/>
+                                                                            <attributedString key="attributedText">
+                                                                                <fragment content="PlatziLive   ">
+                                                                                    <attributes>
+                                                                                        <color key="NSColor" name="Type"/>
+                                                                                        <font key="NSFont" metaFont="cellTitle"/>
+                                                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                                    </attributes>
+                                                                                </fragment>
+                                                                            </attributedString>
                                                                             <color key="highlightedColor" name="Second"/>
                                                                         </label>
                                                                     </subviews>
@@ -99,15 +124,19 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="j0N-5Z-UG7" secondAttribute="bottom" id="DIu-AO-HtZ"/>
                                                 <constraint firstItem="j0N-5Z-UG7" firstAttribute="top" secondItem="HWT-hL-3WV" secondAttribute="topMargin" id="SUN-TC-sGC"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="j0N-5Z-UG7" secondAttribute="trailing" id="hcn-O2-zkf"/>
-                                                <constraint firstItem="j0N-5Z-UG7" firstAttribute="leading" secondItem="HWT-hL-3WV" secondAttribute="leadingMargin" id="zv4-1M-osV"/>
+                                                <constraint firstItem="j0N-5Z-UG7" firstAttribute="leading" secondItem="HWT-hL-3WV" secondAttribute="leadingMargin" constant="-5" id="zv4-1M-osV"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
+                                            <outlet property="CourseLaunchLabel" destination="j6g-5z-jtt" id="tXf-kH-JZe"/>
+                                            <outlet property="EventDescriptiion" destination="hfl-7y-PH5" id="ZC3-9e-PPK"/>
                                             <outlet property="EventImage" destination="k2O-mz-PLj" id="Un7-nu-YyG"/>
                                             <outlet property="EventNameLabel" destination="dA9-1J-OoX" id="oQa-Ur-viB"/>
                                             <outlet property="EventTimeLabel" destination="kP3-jn-P2k" id="Vp6-0W-sdp"/>
-                                            <segue destination="LHj-Aq-91C" kind="presentation" identifier="ShowDetail" id="kFu-V2-1if"/>
+                                            <outlet property="LiveSessionsLabel" destination="4k0-wE-ehD" id="Knm-Pz-Nxu"/>
+                                            <outlet property="PlatziLiveLabel" destination="dac-vG-ugt" id="fkw-G2-g6D"/>
+                                            <segue destination="LHj-Aq-91C" kind="presentation" identifier="ShowDetail" modalTransitionStyle="partialCurl" id="kFu-V2-1if"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -116,111 +145,124 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="6Y4-Gt-LIO"/>
                                 </connections>
                             </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Dh-r4-p6T">
-                                <rect key="frame" x="0.0" y="628" width="414" height="44"/>
-                                <items>
-                                    <barButtonItem title="Course launch" id="TGs-rw-qJl">
-                                        <color key="tintColor" name="Launching"/>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="yjE-7l-3ZT"/>
-                                    <barButtonItem title="Live Sessions" id="Z3K-pn-mng">
-                                        <color key="tintColor" name="Live-session"/>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="lTx-k4-kQB"/>
-                                    <barButtonItem title="PlatziLive" id="dOM-PO-yin">
-                                        <color key="tintColor" name="Live"/>
-                                    </barButtonItem>
-                                </items>
-                                <color key="barTintColor" name="Second"/>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qlh-io-bPW" secondAttribute="trailing" id="8MK-zT-SNX"/>
-                            <constraint firstItem="4Dh-r4-p6T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9SF-3R-p6n"/>
-                            <constraint firstItem="4Dh-r4-p6T" firstAttribute="top" secondItem="Qlh-io-bPW" secondAttribute="bottom" id="9sR-Pd-57x"/>
-                            <constraint firstItem="4Dh-r4-p6T" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="GGy-8M-z7E"/>
-                            <constraint firstItem="4Dh-r4-p6T" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="GZc-UF-b6P"/>
-                            <constraint firstItem="Qlh-io-bPW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PYc-YY-BGv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Qlh-io-bPW" secondAttribute="bottom" id="ZGx-MC-E6i"/>
+                            <constraint firstItem="Qlh-io-bPW" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="eie-eb-JvI"/>
                             <constraint firstItem="Qlh-io-bPW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fpd-ew-usG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="25U-Ig-0Fj">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="acm-PM-4Kr"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="BnU-tJ-0g3"/>
-                    </navigationItem>
+                    <toolbarItems>
+                        <barButtonItem title="Platzi Live" style="plain" id="WVN-QV-wcc">
+                            <color key="tintColor" name="Live"/>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="GZo-N6-uZM"/>
+                        <barButtonItem title="Course Launch" style="plain" id="U1h-BA-U6G">
+                            <color key="tintColor" name="Launching"/>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="ihZ-gI-Uu5"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="aCa-ho-iB3"/>
+                        <barButtonItem title="Live Session" style="plain" id="U7c-Uf-PWD">
+                            <color key="tintColor" name="Live-session"/>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="pKy-Wh-pKB"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="25U-Ig-0Fj"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="AgendaTableView" destination="Qlh-io-bPW" id="ffu-Ny-xSl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1310.144927536232" y="491.57608695652175"/>
+            <point key="canvasLocation" x="5079.1999999999998" y="491.37931034482762"/>
         </scene>
         <!--Course View Controller-->
         <scene sceneID="I9D-wR-Rhs">
             <objects>
                 <viewController id="LHj-Aq-91C" customClass="CourseViewController" customModule="Platzi_Notification" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mVy-xb-FUD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="opengraph-google-adwords-2017" translatesAutoresizingMaskIntoConstraints="NO" id="6EM-b0-HSv" userLabel="backImage">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTL-XA-bhA">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="BGt-Nu-kut">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="KoI-yr-z90">
-                                            <rect key="frame" x="57" y="172.33333333333334" width="300" height="391.33333333333326"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="KoI-yr-z90">
+                                            <rect key="frame" x="24" y="181.33333333333334" width="327" height="449.66666666666663"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="2tf-n2-NJQ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="325.33333333333331"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="2tf-n2-NJQ">
+                                                    <rect key="frame" x="4.3333333333333428" y="0.0" width="318.33333333333326" height="387.66666666666669"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="adwords2x" translatesAutoresizingMaskIntoConstraints="NO" id="hMg-FF-nDz">
-                                                            <rect key="frame" x="70" y="0.0" width="160" height="85"/>
+                                                            <rect key="frame" x="79.333333333333343" y="0.0" width="160" height="85"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="85" id="Loc-b2-geY"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Curso Profesional de Google AdWords 2016" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXr-xq-LID">
-                                                            <rect key="frame" x="0.0" y="108.99999999999997" width="300" height="62"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="300" id="x6Z-Uc-n05"/>
-                                                            </constraints>
+                                                            <rect key="frame" x="22.333333333333343" y="116.99999999999997" width="274" height="62"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
                                                             <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                             <color key="highlightedColor" name="Type"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIG-xw-aDe">
-                                                            <rect key="frame" x="0.0" y="194.99999999999994" width="300" height="130.33333333333331"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="300" id="ZJ6-0T-f7h"/>
-                                                            </constraints>
+                                                            <rect key="frame" x="0.0" y="210.99999999999994" width="318.33333333333331" height="130.33333333333331"/>
                                                             <string key="text">Aprende cómo crear anuncios que realmente convierten clics en ventas. Crea, administra y optimiza campañas en Google AdWords. Prepárate para el examen y certifícate como Adwords Certified Professional.</string>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DICIEMBRE 21 - 4:00 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nak-wa-uNv">
+                                                            <rect key="frame" x="88.666666666666686" y="373.33333333333326" width="141" height="14.333333333333314"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="wRk-RV-mtY">
-                                                    <rect key="frame" x="42.666666666666686" y="365.33333333333326" width="215" height="26"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="wRk-RV-mtY">
+                                                    <rect key="frame" x="13.666666666666657" y="419.66666666666663" width="300" height="30"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4R-Y5-FB9" customClass="Button" customModule="Platzi_Notification" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="90" height="26"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kG-Um-fbo" customClass="Button" customModule="Platzi_Notification" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
                                                             <color key="backgroundColor" name="Primary"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="VEi-TS-8eb"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="3Zv-h4-wHi"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
-                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <state key="normal" title="VIDEO">
+                                                                <color key="titleColor" name="Type"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="7"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="videoButton:" destination="LHj-Aq-91C" eventType="touchUpInside" id="1IT-WS-ICr"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4R-Y5-FB9" customClass="Button" customModule="Platzi_Notification" customModuleProvider="target">
+                                                            <rect key="frame" x="110" y="0.0" width="80" height="30"/>
+                                                            <color key="backgroundColor" name="Primary"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="VEi-TS-8eb"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                                             <inset key="contentEdgeInsets" minX="8" minY="4" maxX="8" maxY="4"/>
-                                                            <state key="normal" title="GO!!"/>
+                                                            <state key="normal" title="GO!!">
+                                                                <color key="titleColor" name="Type"/>
+                                                            </state>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                     <real key="value" value="7"/>
@@ -231,16 +273,16 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aao-j4-o1L" customClass="Button" customModule="Platzi_Notification" customModuleProvider="target">
-                                                            <rect key="frame" x="125" y="0.0" width="90" height="26"/>
+                                                            <rect key="frame" x="220" y="0.0" width="80" height="30"/>
                                                             <color key="backgroundColor" name="Primary"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="26" id="42U-v7-Mzr"/>
-                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="YAH-7Q-VFc"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="YAH-7Q-VFc"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
-                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <inset key="contentEdgeInsets" minX="8" minY="4" maxX="8" maxY="4"/>
-                                                            <state key="normal" title="Ok"/>
+                                                            <state key="normal" title="OK">
+                                                                <color key="titleColor" name="Type"/>
+                                                            </state>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                     <real key="value" value="7"/>
@@ -257,7 +299,9 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="KoI-yr-z90" firstAttribute="centerY" secondItem="BGt-Nu-kut" secondAttribute="centerY" id="5AQ-g1-jcC"/>
+                                        <constraint firstItem="KoI-yr-z90" firstAttribute="leading" secondItem="BGt-Nu-kut" secondAttribute="leading" constant="24" id="8jI-gg-L3Y"/>
                                         <constraint firstItem="KoI-yr-z90" firstAttribute="centerX" secondItem="BGt-Nu-kut" secondAttribute="centerX" id="alz-Dt-DWy"/>
+                                        <constraint firstAttribute="trailing" secondItem="KoI-yr-z90" secondAttribute="trailing" constant="24" id="hlo-7U-2uA"/>
                                     </constraints>
                                 </view>
                                 <blurEffect style="dark"/>
@@ -266,13 +310,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6EM-b0-HSv" firstAttribute="top" secondItem="mVy-xb-FUD" secondAttribute="top" id="2Dr-J5-RrK"/>
-                            <constraint firstItem="6EM-b0-HSv" firstAttribute="bottom" secondItem="iS1-u8-Y30" secondAttribute="bottom" id="IPl-qM-Cac"/>
-                            <constraint firstItem="QTL-XA-bhA" firstAttribute="bottom" secondItem="iS1-u8-Y30" secondAttribute="bottom" id="Nel-Cb-oas"/>
-                            <constraint firstItem="QTL-XA-bhA" firstAttribute="trailing" secondItem="iS1-u8-Y30" secondAttribute="trailing" id="Tvt-o8-mcy"/>
+                            <constraint firstItem="6EM-b0-HSv" firstAttribute="bottom" secondItem="mVy-xb-FUD" secondAttribute="bottom" id="IPl-qM-Cac"/>
+                            <constraint firstItem="QTL-XA-bhA" firstAttribute="bottom" secondItem="mVy-xb-FUD" secondAttribute="bottom" id="Nel-Cb-oas"/>
+                            <constraint firstItem="QTL-XA-bhA" firstAttribute="trailing" secondItem="mVy-xb-FUD" secondAttribute="trailing" id="Tvt-o8-mcy"/>
                             <constraint firstItem="QTL-XA-bhA" firstAttribute="top" secondItem="mVy-xb-FUD" secondAttribute="top" id="Ylg-lw-rA3"/>
-                            <constraint firstItem="6EM-b0-HSv" firstAttribute="leading" secondItem="iS1-u8-Y30" secondAttribute="leading" id="byV-Tq-6mT"/>
-                            <constraint firstItem="QTL-XA-bhA" firstAttribute="leading" secondItem="iS1-u8-Y30" secondAttribute="leading" id="hu6-0v-9Iz"/>
-                            <constraint firstItem="6EM-b0-HSv" firstAttribute="trailing" secondItem="iS1-u8-Y30" secondAttribute="trailing" id="wgh-2F-lfK"/>
+                            <constraint firstItem="6EM-b0-HSv" firstAttribute="leading" secondItem="mVy-xb-FUD" secondAttribute="leading" id="byV-Tq-6mT"/>
+                            <constraint firstItem="QTL-XA-bhA" firstAttribute="leading" secondItem="mVy-xb-FUD" secondAttribute="leading" id="hu6-0v-9Iz"/>
+                            <constraint firstItem="6EM-b0-HSv" firstAttribute="trailing" secondItem="mVy-xb-FUD" secondAttribute="trailing" id="wgh-2F-lfK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iS1-u8-Y30"/>
                     </view>
@@ -280,39 +324,38 @@
                         <outlet property="backImage" destination="6EM-b0-HSv" id="zYZ-Tk-Rza"/>
                         <outlet property="courseDescription" destination="yIG-xw-aDe" id="ONV-S5-y5V"/>
                         <outlet property="courseTitle" destination="vXr-xq-LID" id="nKH-8u-liW"/>
+                        <outlet property="eventDate" destination="nak-wa-uNv" id="eBJ-YV-jEe"/>
                         <outlet property="image" destination="hMg-FF-nDz" id="Ce1-6C-f3G"/>
+                        <outlet property="videButton" destination="5kG-Um-fbo" id="Q6n-P6-a2q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="suT-bm-7KK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2079.7101449275365" y="492.39130434782612"/>
+            <point key="canvasLocation" x="5848.8000000000002" y="492.11822660098522"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="J9i-aF-RBi">
+        <scene sceneID="ZhN-ny-DIJ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M7N-OT-VPh" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="r0p-ao-rOP" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="HZa-IN-AQq">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="wch-YE-QTk">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" name="Primary"/>
                         <color key="barTintColor" name="Second"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" name="Primary"/>
-                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="drT-gV-RGv">
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="U5B-Zz-ORO">
+                        <rect key="frame" x="0.0" y="729" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="Second"/>
                     </toolbar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Sjx-WO-daR"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="uDw-UL-zeW"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dqM-ES-aE6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LWN-o9-J7W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="540" y="493"/>
+            <point key="canvasLocation" x="4136.8000000000002" y="491.37931034482762"/>
         </scene>
     </scenes>
     <resources>
@@ -326,9 +369,6 @@
         </namedColor>
         <namedColor name="Live-session">
             <color red="0.90200001001358032" green="0.94199997186660767" blue="0.82300001382827759" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="Primary">
-            <color red="0.63200002908706665" green="0.78100001811981201" blue="0.33500000834465027" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Primary">
             <color red="0.63200002908706665" green="0.78100001811981201" blue="0.33500000834465027" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

@@ -14,99 +14,102 @@ class ViewController: UIViewController {
     @IBOutlet weak var AgendaTableView: UITableView!
 
 	private var dataCalendar: DataAgenda?
-
+	private var refreshControl = UIRefreshControl()
+	private var searchController = UISearchController(searchResultsController: nil)
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-        self.AgendaTableView.delegate = self
-        self.AgendaTableView.dataSource = self
-        self.AgendaTableView.separatorColor = UIColor.clear
-
+		AgendaTableView.delegate = self
+        AgendaTableView.dataSource = self
+		AgendaTableView.addSubview(refreshControl)
+		
+		refreshControl.addTarget(self, action: #selector(getDataRefreshValueChanged(_:)), for: .valueChanged)
+		
+		searchController.searchResultsUpdater = self
+		searchController.searchBar.searchBarStyle = .minimal
+		searchController.searchBar.barStyle = .black
+		searchController.searchBar.tintColor = UIColor(named: "Primary")
+		searchController.hidesNavigationBarDuringPresentation = true
+		searchController.dimsBackgroundDuringPresentation = false
+		
+		definesPresentationContext = true
+		
+		navigationItem.searchController = searchController
+		
         addNavBarImage()
-        getDataFromApi()
+		
+		Network().getDataFromApi() { [weak self] dataSerialized, error in
+			guard let `self` = self else {
+				return
+			}
+			
+			guard error == nil else {
+				print("Conecction Error ", error?.localizedDescription as Any)
+				print(error?.localizedDescription as Any)
+
+				let alert = UIAlertController(title: "Error 🤔", message: error?.localizedDescription, preferredStyle: .alert)
+				alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+
+				self.present(alert, animated: true, completion: nil)
+				return
+			}
+			
+			guard let data = dataSerialized else {
+				return
+			}
+			
+			self.dataCalendar = data
+			self.addNewNotifications(whitData: data)
+			
+			DispatchQueue.main.async {
+				self.AgendaTableView.reloadData()
+			}
+		}
     }
 	
     private func addNavBarImage() {
-		guard let navController = navigationController else {
-			return
-		}
-		
         let logoImageView = UIImageView(image: #imageLiteral(resourceName: "platzi"))
-        let bannerWidth = navController.navigationBar.frame.size.width
-        let bannerHeight = navController.navigationBar.frame.size.height
-
-        let bannerX = bannerWidth / 2 - #imageLiteral(resourceName: "platzi").size.width / 2
-        let bannerY = bannerHeight / 2 - #imageLiteral(resourceName: "platzi").size.height / 2
-        
-        logoImageView.frame = CGRect(x: bannerX, y: bannerY, width: bannerWidth, height: bannerHeight)
-        logoImageView.contentMode = .scaleAspectFit
-        
+		logoImageView.contentMode = .scaleAspectFit
+		
         navigationItem.titleView = logoImageView
     }
 
-    func getDataFromApi() {
-        let config = URLSessionConfiguration.default
-        config.timeoutIntervalForRequest = 20.0
-
-        let session = URLSession(configuration: config)
-        let url = URL(string: "https://platzi-agenda.herokuapp.com/get-agenda-data/")!
-        
-        let task = session.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
-            guard error == nil else {
-                print("Conecction Error ", error!.localizedDescription)
-                print(error?.localizedDescription as Any)
-				
-                let alert = UIAlertController(title: "Error 🤔", message: error?.localizedDescription, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {_ in
-                    self.getDataFromApi()
-                }))
-				
-                self.present(alert, animated: true, completion: nil)
-
-                return
-            }
-
-            guard let data = data else {
+	@objc func getDataRefreshValueChanged(_ sender: Any) {
+		Network().getDataFromApi() { [weak self] dataSerialized, error in
+			guard let `self` = self else {
 				return
 			}
-
-            if let response = response as? HTTPURLResponse, response.statusCode != 200 {
-                print("No 200 status")
-                do {
-                    let url = URL(string: "https://platzi-agenda.herokuapp.com/set-agenda-data/")
-                    URLSession.shared.dataTask(with: url!) {_,_,_ in
-                        print("no 200 run")
-					}.resume()
-				}
-				self.getDataFromApi()
-            }
-
-            do {
-            	let jsonSerialized = try JSONDecoder().decode(DataAgenda.self, from: data)
-            	self.dataCalendar = jsonSerialized
-				self.addNewNotifications(whitData: jsonSerialized)
-			} catch let DecodingError.dataCorrupted(context) {
-				print(context)
-			} catch let DecodingError.keyNotFound(key, context) {
-				print("Key '\(key)' not found:", context.debugDescription)
-				print("codingPath:", context.codingPath)
-			} catch let DecodingError.valueNotFound(value, context) {
-				print("Value '\(value)' not found:", context.debugDescription)
-				print("codingPath:", context.codingPath)
-			} catch let DecodingError.typeMismatch(type, context)  {
-				print("Type '\(type)' mismatch:", context.debugDescription)
-				print("codingPath:", context.codingPath)
-			} catch {
-				print("error: ", error)
+			
+			guard error == nil else {
+				print("Conecction Error ", error?.localizedDescription as Any)
+				print(error?.localizedDescription as Any)
+				
+				let alert = UIAlertController(title: "Error 🤔", message: error?.localizedDescription, preferredStyle: .alert)
+				alert.addAction(UIAlertAction(title: "Ok", style: .default,  handler: nil))
+				
+				self.present(alert, animated: true, completion: {
+					DispatchQueue.main.async {
+						self.refreshControl.endRefreshing()
+					}
+				})
+				
+				return
 			}
-            DispatchQueue.main.async {
-                self.AgendaTableView.reloadData()
-            }
-            
-        }
-        task.resume()
-        
-    }
+			
+			guard let data = dataSerialized else {
+				return
+			}
+			
+			self.dataCalendar = data
+			self.addNewNotifications(whitData: data)
+			
+			DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
+				self.AgendaTableView.reloadData()
+				self.refreshControl.endRefreshing()
+			})
+		}
+	}
 
     func addNewNotifications(whitData dataJson: DataAgenda) {
 
@@ -115,32 +118,29 @@ class ViewController: UIViewController {
 
         for i in 0..<dataJson.count {
 			
-			guard let data = self.dataCalendar else {
-				return
-			}
-			
             let content = UNMutableNotificationContent()
-			content.title = data[i].details.title
-            content.body = data[i].details.description
+			content.title = dataJson[i].details.title
+            content.body = dataJson[i].details.description
             content.categoryIdentifier = "message"
             content.sound = UNNotificationSound.default
 
             let formatted = DateFormatter()
             formatted.dateFormat = "yyyy-MM-dd'T'HH:mm:ssxxxxx"
-            let date = formatted.date(from: data[i].startTime)
-            if date!.timeIntervalSinceNow <= 0 {
-                continue
-            }
-
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: date!.timeIntervalSinceNow, repeats: false)
+            let date = formatted.date(from: dataJson[i].startTime)
+			
+			guard let _data = date, _data.timeIntervalSinceNow >= 0 else {
+				continue
+			}
+			
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: _data.timeIntervalSinceNow, repeats: false)
 
             let request = UNNotificationRequest(
-                identifier: "course.\(data[i].id)",
+                identifier: "course.\(dataJson[i].id)",
                 content: content,
                 trigger: trigger
             )
 
-            UNUserNotificationCenter.current().add(request) { (error : Error?) in
+            UNUserNotificationCenter.current().add(request) { (error: Error?) in
                 if let theError = error {
                     print(theError.localizedDescription)
                 } else {
@@ -149,24 +149,7 @@ class ViewController: UIViewController {
             }
         }
     }
-
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert,.sound])
-
-        /* Not a very good way to do this, just here to give you ideas.
-         let alert = UIAlertController(
-         title: notification.request.content.title,
-         message: notification.request.content.body,
-         preferredStyle: .alert)
-         let okAction = UIAlertAction(
-         title: "OK",
-         style: .default,
-         handler: nil)
-         alert.addAction(okAction)
-         present(alert, animated: true, completion: nil)
-         */
-    }
-
+	
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -190,9 +173,9 @@ class ViewController: UIViewController {
 				return
 			}
 
-            let selected = data[indexPath.row]
-            print(selected.details.title)
-            detailViewController.data = selected.details
+            let _data = data[indexPath.row]
+            print(_data.details.title)
+            detailViewController.data = _data
 
         default:
             print("nil")
@@ -203,12 +186,12 @@ class ViewController: UIViewController {
 }
 
 // MARK: - TableView
-extension ViewController: UITableViewDataSource {
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return self.dataCalendar?.count ?? 0
     }
-    
+	
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = AgendaTableView.dequeueReusableCell(withIdentifier: "AgendaCell") as? AgendaTableViewCell else {
 			return UITableViewCell()
@@ -219,14 +202,17 @@ extension ViewController: UITableViewDataSource {
 		}
 		
 		cell.EventNameLabel.text = dataCalendar[indexPath.row].details.title
+		cell.EventDescriptiion.text = dataCalendar[indexPath.row].details.socialDescription
         cell.EventImage.moa.url = dataCalendar[indexPath.row].details.badge
-
+		
+		cell.agendaItemType(type: dataCalendar[indexPath.row].agendaItemType)
+		
         let formatted = DateFormatter()
         formatted.dateFormat = "yyyy-MM-dd'T'HH:mm:ssxxxxx"
         let date = formatted.date(from: dataCalendar[indexPath.row].startTime)
 
-        formatted.dateFormat = "HH:mm"
-        let dateString = formatted.string(from: date!)
+        formatted.dateFormat = "MMM d"
+        let dateString = formatted.string(from: date ?? Date())
 
         cell.EventTimeLabel.text = "\(dateString)"
 
@@ -235,12 +221,10 @@ extension ViewController: UITableViewDataSource {
 
 }
 
-extension ViewController: UITableViewDelegate {
-//
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print(indexPath.row)
-//
-//
-//    }
-
+extension ViewController: UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate {
+	func updateSearchResults(for searchController: UISearchController) {
+		print(searchController.searchBar.text)
+	}
+	
+	
 }

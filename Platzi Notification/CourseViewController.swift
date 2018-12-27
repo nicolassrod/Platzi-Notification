@@ -14,22 +14,33 @@ class CourseViewController: UIViewController {
     @IBAction func dismiss(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+	
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var courseTitle: UILabel!
     @IBOutlet weak var courseDescription: UILabel!
     @IBOutlet weak var backImage: UIImageView!
-
-    var data: Details?
+	@IBOutlet weak var videButton: UIButton!
+	@IBOutlet weak var eventDate: UILabel!
+	
+    var data: DataAgendum?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("ooooooo")
-
-        courseTitle.text = data?.title
-        courseDescription.text = data?.socialDescription
-        image.moa.url = data?.badge
-        backImage.moa.url = data?.socialImageURL
-        // Do any additional setup after loading the view.
+		
+        courseTitle.text = data?.details.title
+        courseDescription.text = data?.details.description
+        image.moa.url = data?.details.badge
+        backImage.moa.url = data?.details.socialImageURL
+		data?.details.video == nil ? (videButton.isHidden = true) : (videButton.isHidden = false)
+		
+		let formatted = DateFormatter()
+		formatted.dateFormat = "yyyy-MM-dd'T'HH:mm:ssxxxxx"
+		let date = formatted.date(from: data!.startTime)
+		
+		formatted.locale = Locale.current
+		formatted.dateFormat = "MMMM d - h:mm a"
+		let dateString = formatted.string(from: date ?? Date())
+		eventDate.text = dateString
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,23 +49,34 @@ class CourseViewController: UIViewController {
     }
 
     @IBAction func goButton(_ sender: Any) {
-        let safariVC = SFSafariViewController(url: URL(string: "https://platzi.com\(String(describing: data!.url))")!)
+		guard let data = data else {
+			return
+		}
+		
+		guard let url = URL(string: "https://platzi.com\(data.details.url)") else {
+			return
+		}
+		
+        let safariVC = SFSafariViewController(url: url)
         safariVC.preferredBarTintColor = UIColor(named: "Type")
         safariVC.preferredControlTintColor = UIColor(named: "Primary")
 
-        self.present(safariVC, animated: true, completion: nil)
+        present(safariVC, animated: true, completion: nil)
     }
 
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+	@IBAction func videoButton(_ sender: UIButton) {
+		guard let data = data else {
+			return
+		}
+		
+		guard let url = URL(string: "http://youtube.com/watch?v=\(data.details.video ?? "NKtTJi8Bp6I")") else {
+			return
+		}
+		
+		let safariVC = SFSafariViewController(url: url)
+		safariVC.preferredBarTintColor = UIColor(named: "Type")
+		safariVC.preferredControlTintColor = UIColor(named: "Primary")
+		
+		present(safariVC, animated: true, completion: nil)
+	}
 }
